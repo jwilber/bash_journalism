@@ -5,6 +5,7 @@
 curl http://stash.compciv.org/scrapespeare/shakespeare-plays-flat-text.zip -o shakespeare.zip
 
 unzip shakespeare.zip
+rm shakespeare.zip
 
 # Now all of the shakespeare plays are stored as plaintext files in 'shakespeare-plays-flat-text'
 
