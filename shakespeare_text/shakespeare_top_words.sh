@@ -1,21 +1,23 @@
-
-# Download shakespear plays (plaintext files)
-curl http://stash.compciv.org/scrapespeare/shakespeare-plays-flat-text.zip -o shakespeare.zip
-unzip shakespeare.zip
-
-# cd into newly created directory, count lines in each text file
-echo "Counting total number of lines in all documents \n"
+# -----------------------------------
+# cd into dir holding shakespeare plays
+# -----------------------------------
 cd shakespeare-plays-flat-text
-cat *.txt | wc -l
 
-# Count top 10 words for a given play
+
+# -----------------------------------
+# Count the number of words of at least size '$2' in document '$1'.txt
+# -----------------------------------
+if [[ -z $2 ]]; then
+  mval=1
+else
+  mval=$2
+fi
+
 cat "$1.txt" | \
   tr [[:upper:]] [[:lower:]] | \
-  grep -oE "[[:alpha:]]{2,}" | \
-  sort | \
-  uniq -c | \
-  sort -rn | \
-  head -n 10
+  grep -oE "[[:alpha:]]{$mval,}" | \
+  sort | uniq -c | \
+  sort -rn | head -n 10
 
 
 
