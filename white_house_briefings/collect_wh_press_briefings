@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Downloads the press-briefing listings, starting from  http://www.whitehouse.gov/briefing-room/press-briefings?page=0
+# then totals up the number of lines in all of the files
+# Finally, emails this to email of choice
