@@ -9,7 +9,16 @@ rm shakespeare.zip
 
 # Now all of the shakespeare plays are stored as plaintext files in 'shakespeare-plays-flat-text'
 
-echo "Total number of lines for all downloaded Shakespeare plays: \n"
+echo
+echo "Total number of lines for all downloaded Shakespeare plays: "
+echo
 cd shakespeare-plays-flat-text
 cat *.txt | wc -l
 
+echo
+
+if [ $? -eq 0 ]
+  then echo "Data successfully loaded"
+else
+  echo "Problem loading data"
+fi
